@@ -1,0 +1,6 @@
+Private sub Userform_Activate()
+Baris_Terakhir = Sheets1.Cells(Rows.Count, 1).End(xlUp).Row
+	For i = 5 To Baris_Terakhir
+		Combobox.AddiTem Sheets1.Cells(i, 1)
+		Next 
+ENd sub
