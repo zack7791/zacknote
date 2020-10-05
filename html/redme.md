@@ -1,1 +1,5 @@
 # isine
+
+```php
+$duit="uang";
+```
