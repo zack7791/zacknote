@@ -1,6 +1,22 @@
 Private sub Userform_Activate()
-Baris_Terakhir = Sheets1.Cells(Rows.Count, 1).End(xlUp).Row
-	For i = 5 To Baris_Terakhir
-		Combobox.AddiTem Sheets1.Cells(i, 1)
-		Next 
+Dim i As Long
+Baris_Terakhir = Sheets("Database").Cells(Rows.Count, 21).End(xlUp).Row
+    For i = 2 To Baris_Terakhir
+        Me.Customer.AddItem Sheets("Database").Cells(i, 21).Value
+    Next i
+'Dim z As Long
+yangTerakhir = Sheets("Database").Cells(Rows.Count, 17).End(xlUp).Row
+    For i = 2 To yangTerakhir
+        Me.Style.AddItem Sheets("Database").Cells(i, 17).Value
+    Next i
 ENd sub
+
+"Baris_Terakhir , yangTerakhir = inisial dari baris yang terakhir 
+Sheets("Database") = nama Sheet yang aktif.
+(Rows.count 21) (Rows.count 17) = Kolom ke 17 atau ke 21 terhitung dari A=1 B-2 C-3 dan seterusnya.
+i - variable (bebas pakai huruf apapun)
+
+ A | B | Q | Z
+------|-----|------------ | -------------
+isi A | isi B | yangTerakhir -1 | Baris_Terakhir -1
+isi A | isi B |yangTerakhir | Baris_Terakhir
